@@ -1,0 +1,265 @@
+/* Leonida Trophy Ledger — original Vice City sunset theme. No external assets. */
+:root {
+  --sunset-pink: #ff5e8a;
+  --sunset-orange: #ff9a3d;
+  --sunset-gold: #ffd166;
+  --teal: #2dd4bf;
+  --ink: #17101f;
+  --panel: #241a33;
+  --panel-soft: #2e2142;
+  --line: #4a3566;
+  --text: #f5eefc;
+  --muted: #c9b8de;
+  --platinum: #e8f4ff;
+  --gold: #ffd166;
+  --silver: #d7dce3;
+  --bronze: #e0a071;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.hero {
+  background: linear-gradient(160deg, #3b115f 0%, #a4136b 42%, #ff5e3a 72%, #ff9a3d 100%);
+  padding: 2.5rem 1rem 2rem;
+}
+
+.hero-inner { max-width: 960px; margin: 0 auto; }
+
+.kicker {
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--sunset-gold);
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.6rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.tagline { margin: 0 0 1.4rem; max-width: 34rem; color: #ffe9f2; }
+
+.progress-line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.progress-bar {
+  height: 14px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--sunset-gold));
+  transition: width 0.3s ease;
+}
+
+.grade-counts { margin: 0.5rem 0 0; font-size: 0.9rem; color: #ffe9f2; }
+
+.views {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+  flex-wrap: wrap;
+}
+
+.view-btn {
+  border: 2px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.view-btn.active {
+  background: var(--sunset-pink);
+  border-color: var(--sunset-pink);
+  color: #fff;
+}
+
+.view-btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 1rem; }
+
+.toolbar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: end;
+  margin-bottom: 0.75rem;
+}
+
+.search-box input, .filter-label select {
+  display: block;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 2px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.search-box input { min-width: 16rem; }
+
+.spoiler-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.data-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+
+.data-actions button {
+  border: 2px solid var(--teal);
+  background: transparent;
+  color: var(--teal);
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.data-actions button:hover { background: var(--teal); color: var(--ink); }
+
+.save-note { font-size: 0.9rem; color: var(--muted); }
+
+.empty-state {
+  background: var(--panel);
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+
+.trophy {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.9rem;
+  align-items: start;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.trophy.earned { border-color: var(--teal); background: #1d2b33; }
+
+.trophy-check { width: 1.5rem; height: 1.5rem; margin-top: 0.2rem; accent-color: var(--teal); cursor: pointer; }
+
+.trophy-name { margin: 0; font-size: 1.08rem; }
+.trophy-name button {
+  background: none; border: none; padding: 0;
+  color: var(--text); font: inherit; font-weight: 700;
+  text-align: left; cursor: pointer; text-decoration: underline dotted;
+}
+
+.trophy-desc { margin: 0.2rem 0 0.45rem; color: var(--muted); }
+.trophy-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.tag.grade-platinum { background: var(--platinum); color: #123; border-color: var(--platinum); }
+.tag.grade-gold { background: var(--gold); color: #3a2a00; border-color: var(--gold); }
+.tag.grade-silver { background: var(--silver); color: #222; border-color: var(--silver); }
+.tag.grade-bronze { background: var(--bronze); color: #3a1f00; border-color: var(--bronze); }
+.tag.missable { background: #5b1030; color: #ffb3c8; border-color: var(--sunset-pink); }
+.tag.hidden-flag { background: #33244d; color: var(--sunset-gold); }
+
+.detail {
+  position: sticky;
+  bottom: 1rem;
+  margin-top: 1.25rem;
+  background: var(--panel-soft);
+  border: 2px solid var(--sunset-orange);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.detail h2 { margin: 0.2rem 0 0.4rem; }
+.detail h3 { margin: 1rem 0 0.3rem; color: var(--sunset-gold); }
+.detail p { margin: 0.3rem 0; }
+.detail-grade { margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--teal); }
+.detail-desc { color: var(--muted); font-style: italic; }
+.detail-meta { font-size: 0.85rem; color: var(--muted); }
+.detail-earned { display: inline-flex; gap: 0.4rem; align-items: center; font-weight: 700; margin-top: 0.75rem; cursor: pointer; }
+
+#detailClose {
+  float: right;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.lede { max-width: 46rem; }
+
+.roadmap { display: grid; gap: 1rem; padding-left: 1.4rem; }
+.roadmap li {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.75rem 1.1rem;
+  list-style-position: inside;
+}
+.roadmap h3 { margin: 0 0 0.35rem; color: var(--sunset-gold); }
+.roadmap p { margin: 0; }
+
+footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: 1.9rem; }
+  .trophy { grid-template-columns: auto 1fr; }
+  .search-box input { min-width: 0; width: 100%; }
+}

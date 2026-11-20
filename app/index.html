@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI, with a roadmap to the platinum.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Ledger</h1>
+    <p class="tagline">Every trophy, every guide, one road to the platinum. Works fully offline — your progress never leaves this browser.</p>
+    <div class="progress-wrap">
+      <div class="progress-line"><span id="progressText">0 / 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="grade-counts" id="gradeCounts"></p>
+    </div>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button class="view-btn active" data-view="checklist" type="button">Checklist</button>
+  <button class="view-btn" data-view="roadmap" type="button">Roadmap to Platinum</button>
+  <button class="view-btn" data-view="missable" type="button">Missable Trophies</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="toolbar">
+      <label class="search-box">Search <input id="search" type="search" placeholder="Trophy name or mission…" autocomplete="off"></label>
+      <label class="filter-label">Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label class="filter-label">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="filter-label">Status
+        <select id="statusFilter">
+          <option value="all">All</option>
+          <option value="earned">Earned</option>
+          <option value="unearned">Not yet earned</option>
+        </select>
+      </label>
+      <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+    </div>
+    <div class="data-actions">
+      <button id="exportBtn" type="button">Export progress</button>
+      <button id="importBtn" type="button">Import progress</button>
+      <input id="importFile" type="file" accept=".json,application/json" hidden>
+      <button id="resetBtn" type="button">Reset progress</button>
+      <span id="saveNote" class="save-note" aria-live="polite"></span>
+    </div>
+    <p id="emptyState" class="empty-state" hidden>No trophies match these filters. Try clearing the search or choosing “All kinds”.</p>
+    <ul id="trophyList" class="trophy-list"></ul>
+    <aside id="detail" class="detail" hidden>
+      <button id="detailClose" type="button" aria-label="Close guide">✕</button>
+      <p class="detail-grade" id="detailGrade"></p>
+      <h2 id="detailName"></h2>
+      <p class="detail-desc" id="detailDesc"></p>
+      <h3>Guide</h3>
+      <p id="detailGuide"></p>
+      <h3>Source</h3>
+      <p id="detailSource"></p>
+      <p class="detail-meta" id="detailMeta"></p>
+      <label class="detail-earned"><input id="detailEarned" type="checkbox"> Mark as earned</label>
+    </aside>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the Platinum</h2>
+    <p class="lede">The platinum, <strong>Vice Got a Price!</strong>, unlocks when the other 54 trophies are earned. Follow these stages in order and you will never have to backtrack.</p>
+    <ol class="roadmap">
+      <li><h3>Stage 1 — Play the story (Chapters 1–4)</h3>
+        <p>Play every story mission in order. This earns the chapter trophies <em>Paradise Lost</em>, <em>T**s Ass Drug Money</em>, <em>Vice City, Baby!</em> and <em>Top Of The World, Ma</em>, the mission trophies <em>Trust</em>, <em>Break the Bank</em>, <em>Family Matters</em>, <em>DWNFALL</em>, <em>Hi-Jacked</em> and <em>Snow Storm</em>, the opening trophy <em>Just Like Paradise</em> and the finale gold <em>You Gotta Know When to Get Off</em>. Do the missable moments as they come — see the Missable view — because story moments do not always come back.</p></li>
+      <li><h3>Stage 2 — Strangers and side missions</h3>
+        <p>Finish the stranger strands: Andy, Kenton, Billy, Randy and Tyrone each have a final-mission trophy, and any 8 complete stranger strands earn the silver <em>Strangers &amp; Freaks</em>. Hunt the unique animal for Bret (<em>Fair Game</em>) while you are out exploring.</p></li>
+      <li><h3>Stage 3 — Activities and challenges</h3>
+        <p>Sample all 9 activity types once (<em>Master of None</em>), gold all 42 Shooting Range challenges (<em>The Shootist</em>), win drone races at all 14 Top Fun locations (<em>Top Fun</em>), win 20 different races (<em>Earn Cash, Not Kudos</em>), beat Cal at fishing (<em>Baited My Tackle</em>), finish one arcade game (<em>Stick Fiddler</em>) and a bowling game (<em>Let’s Go Bowling</em>), and complete 50 challenges (<em>One Last Thing</em>). Work on the 250 stunts (<em>Cunning Stunts</em>) whenever you drive.</p></li>
+      <li><h3>Stage 4 — Collectibles and exploration</h3>
+        <p>Meditate at all 18 spots (<em>Positive Mental Attitude</em>), complete 3 card sets (<em>Don’t Touch My Deck</em>), WAiNK It at 100 locations (<em>You WAiNKer!</em>), discover 100 vehicles (<em>Whip It Good</em>), explore all 52 areas of Leonida (<em>The Goodtime State</em>) and buy all 8 garage properties (<em>Little Boxes</em>).</p></li>
+      <li><h3>Stage 5 — Crime, cash and clean-up</h3>
+        <p>Rob 5 bank vaults (<em>Maximum Withdrawal</em>), an armored truck (<em>A Classic Blitz Play</em>), one illegal operation per gang — 9 gangs (<em>Pest Control</em>) — and a jewelry store undetected (<em>Sneakthief</em>). Launder $250,000 of marked bills (<em>Dime on the Dollar</em>), spend $100,000 in shops (<em>Treat Yo Self</em>), register 10 vehicles in the Scooter Bros app (<em>On the Spot</em>), and drop 5 enemies in one Combat Focus (<em>Gunslinger</em>).</p></li>
+      <li><h3>Stage 6 — 100% completion</h3>
+        <p>When every category above is done, check the in-game completion figure and mop up whatever is short for the gold <em>A Long Road</em> (100% completion). The platinum <em>Vice Got a Price!</em> pops with it.</p></li>
+    </ol>
+    <p class="lede">Counts on this roadmap come straight from the official trophy descriptions: 4 chapters, 42 shooting-range challenges, 14 drone-race locations, 20 races, 9 activity types, 8 stranger strands, 18 meditation spots, 100 WAiNK locations, 100 vehicles, 52 areas, 8 garages, 5 bank vaults, 9 gangs, 50 challenges, 250 stunts, $250,000 laundered and $100,000 spent.</p>
+  </section>
+
+  <section id="view-missable" class="view" hidden>
+    <h2>Missable Trophies — Do These First</h2>
+    <p class="lede">These trophies are tied to specific moments, encounters or conditions that may not come back. Handle them the first time the chance appears; everything else on the list can be cleaned up in free roam after the story.</p>
+    <ul id="missableList" class="trophy-list"></ul>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Ledger — an unofficial fan-made guide. Grand Theft Auto and GTA are trademarks of their owners; this guide uses no Rockstar logo, artwork or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them; every guide is written in the author's own words and cites its source. Data: the official 55-trophy PS5 list.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
